@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        
         <title>HomePage</title>
 
         <!-- Fonts -->
@@ -22,6 +22,7 @@
         <h1>Home Page</h1>
         <a href="">Saiba mais</a>
         <form action="/login">
+            
             <button>Login</button>            
         </form>
     </body>
