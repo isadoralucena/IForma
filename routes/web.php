@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,42 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('HomePage');
-});
+Route::get('/', [Controller::class, 'home']);
+Route::get('/', [UserController::class, 'home']);
 
-Route::get('/login', function () {
-    return view('loginScreen');
-});
-Route::post('/login', function () {
-    return view('loginScreen');
-});
+Route::get('/login', [Controller::class, 'login']);
+Route::post('/login', [Controller::class, 'login']);//a modificar
 
-Route::get('/register', function () {
-    return view('registerScreen');
-});
-Route::post('/register', function () {
-    return view('registerScreen');
-});
+Route::get('/register', [UserController::class, 'register']);
+Route::post('/register', [UserController::class, 'store']);
 
-Route::get('/HomeUser', function () {
-    return view('UserScreen');
-});
-Route::post('/HomeUser', function () {
-    return view('UserScreen');
-});
+Route::get('/HomeUser', [UserController::class, 'homeUser']);
+Route::post('/HomeUser', [Controller::class, 'homeUser']);
 
-Route::get('/RegisterContent', function () {
-    return view('RegisterContent');
-});
-Route::post('/RegisterContent', function () {
-    return view('RegisterContent');
-});
+Route::get('/RegisterContent', [Controller::class, 'registerContent']);
+Route::post('/RegisterContent', [Controller::class, 'registerContent']);
 
-Route::get('/error', function () {
-    return view('error');
-});
+Route::get('/error', [Controller::class, 'error']);
 
-Route::get('/ConfirmeRegister', function () {
-    return view('ConfirmeRegister');
-});
+Route::get('/ConfirmeRegister', [userController::class, 'registerConfirm']);
+

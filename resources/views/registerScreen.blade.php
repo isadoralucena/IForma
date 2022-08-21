@@ -11,10 +11,10 @@
     <form action="{{url('/register')}}" method="POST">
     @csrf
         <label for="nome">Nome: </label><input type="text" name="nome" placeholder="Nome">
-        <label for="sobrenome">Sobrenome: </label><input type="text" name="sobrenome" placeholder="Sobrenome">
         <label for="date">Data de nascimento: </label><input type="date" name="date" placeholder="Data de nascimento">
         <label for="email">E-mail: </label><input type="email" name="email" placeholder="abc@escolar.ifrn.edu.br">
         <label for="pass">Senha: </label><input type="password" name="pass" placeholder="Senha">
+        <label for="tipoUsuario">Insira o tipo de usuário: </label><input type="text" name="tipoUsuario" placeholder="Insira o tipo de usuario">
         <button>Registrar</button>
     </form>
 </body>
