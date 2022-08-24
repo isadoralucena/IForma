@@ -7,15 +7,10 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function register(){
-        return view('registerScreen');
-    }
-    public function registerConfirm(){
-        return view('ConfirmeRegister');
-    }
-
     public function index(){
         $users = User::all();
+        
+        return view('');
     }
     public function store(Request $request){
         $user = new User;
@@ -26,8 +21,7 @@ class UserController extends Controller
         $user->pass = $request->pass;
         $user->tipoUsuario = $request->tipoUsuario;
 
-
         $user->save();
         return redirect('/');
-}
+    }
 }

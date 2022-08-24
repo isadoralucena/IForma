@@ -14,23 +14,42 @@ use App\Http\Controllers\Controller;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('homepage');
+});
 
-Route::get('/', [Controller::class, 'home']);
-Route::get('/', [UserController::class, 'home']);
+Route::get('/login', function () {
+    return view('auth2.login');
+});
 
-Route::get('/login', [Controller::class, 'login']);
-Route::post('/login', [Controller::class, 'login']);//a modificar
+Route::post('/login', function () {
+    return view('auth2.login');
+});
 
-Route::get('/register', [UserController::class, 'register']);
+Route::get('/register', function () {
+    return view('auth2.register');
+});
+
+Route::post('/register', function () {
+    return view('auth2.register');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::post('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/error', function () {
+    return view('error');
+});
+
 Route::post('/register', [UserController::class, 'store']);
 
-Route::get('/HomeUser', [UserController::class, 'homeUser']);
-Route::post('/HomeUser', [Controller::class, 'homeUser']);
+Route::get('/error', function () {
+    return view('error');
+});
 
-Route::get('/RegisterContent', [Controller::class, 'registerContent']);
-Route::post('/RegisterContent', [Controller::class, 'registerContent']);
-
-Route::get('/error', [Controller::class, 'error']);
-
-Route::get('/ConfirmeRegister', [userController::class, 'registerConfirm']);
 
