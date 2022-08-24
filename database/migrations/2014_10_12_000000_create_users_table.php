@@ -25,7 +25,10 @@ return new class extends Migration
             $table->string('email', 100)->unique();
             $table->date('date');
             $table->string('pass', 16);
-            $table->integer("tipoUsuario");
+            $table->integer("userType")->default('1');
+            // 1 aluno
+            // 2 professor
+            // 3 admin
             $table->rememberToken();
             $table->timestamps();
         });

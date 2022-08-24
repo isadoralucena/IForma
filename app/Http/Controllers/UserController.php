@@ -19,7 +19,7 @@ class UserController extends Controller
         $user->date = $request->date;
         $user->email = $request->email;
         $user->pass = $request->pass;
-        $user->tipoUsuario = $request->tipoUsuario;
+        $user->userType = $request->userType;
 
         $user->save();
         return redirect('/');
