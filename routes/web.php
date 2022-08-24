@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,42 +12,13 @@ use App\Http\Controllers\Controller;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
-    return view('homepage');
-});
-
-Route::get('/login', function () {
-    return view('auth2.login');
-});
-
-Route::post('/login', function () {
-    return view('auth2.login');
-});
-
-Route::get('/register', function () {
-    return view('auth2.register');
-});
-
-Route::post('/register', function () {
-    return view('auth2.register');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-});
+})->middleware(['auth'])->name('dashboard');
 
-Route::post('/dashboard', function () {
-    return view('dashboard');
-});
-
-Route::get('/error', function () {
-    return view('error');
-});
-
-Route::post('/register', [UserController::class, 'store']);
-
-Route::get('/error', function () {
-    return view('error');
-});
-
-
+require __DIR__.'/auth.php';
