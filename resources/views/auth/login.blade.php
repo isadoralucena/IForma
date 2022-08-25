@@ -13,7 +13,7 @@
         <label for="email">E-mail: </label>
         <input type="email" name="email" placeholder="abc@escolar.ifrn.edu.br">
         <label for="pass">Senha: </label>
-        <input type="password" name="pass" placeholder="password">
+        <input type="password" name="password" placeholder="password">
         <button>Acessar</button>
     </form>
 </body>
