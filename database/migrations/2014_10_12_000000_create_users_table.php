@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('email', 100)->unique();
             $table->date('date');
-            $table->string('password', 16);
+            $table->text('password');
             $table->integer("userType")->default('1');
             // 1 aluno
             // 2 professor
