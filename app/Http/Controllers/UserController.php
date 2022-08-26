@@ -12,20 +12,4 @@ class UserController extends Controller
         
         return view('');
     }
-    public function register()
-    {
-        return view('auth.register');
-    }
-    public function store(Request $request){
-        $user = new User;
-
-        $user->name = $request->name;
-        $user->date = $request->date;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->userType = $request->userType;
-
-        $user->save();
-        return redirect('/');
-    }
 }
