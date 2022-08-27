@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Cor padrão das telas */
+body{
+    background-color: aliceblue;
+}
+/* padrão dos botões pequenos */
+.littleButton{
+    background-color: black;
+    color: aliceblue;
+    border-radius: 15px;
+    border: solid black 1px;
+    height: 25px;
+    width: 70px;
+    font-family:Nunito Sans, sans-serif;
+}
+/* padrão botões grandes */
+.bigButton{
+    background-color: black;
+    color: aliceblue;
+    border-radius: 15px;
+    border: solid black 1px;
+    height: 30px;
+    width: 200px;
+    font-family:Nunito Sans, sans-serif;
+    margin-left: 50px;
+}
+/* inputs */
+input{
+    background-color: aliceblue;
+    color: black;
+    border-radius: 5px;
+    border: solid black 2px;
+    height: 30px;
+    width: 300px;
+    font-family:Nunito Sans, sans-serif;
+    margin-bottom: 10px;
+    display: block;
+}
+/* padrão de titulos */
+.titles{
+    color: black;
+    font-size: 30px;
+    font-style: bold;
+    font-family:Nunito Sans, sans-serif;
+    margin-bottom: 10px;
+}
+/* padrão de textos pequenos */
+.texts{
+    color: black;
+    font-size: 15px;
+    font-family:Nunito Sans, sans-serif;
+}
+/* Pagina de registro */
+.all{
+    height: 100%;
+    width: 320;
+    display: inline-block;
+    border: solid 1px black;
+}
+.register{
+
+    border: solid 1px black;
+    display:block;
+    width: 320px;
+    height: 400px;
+    padding: 10px;
+}
