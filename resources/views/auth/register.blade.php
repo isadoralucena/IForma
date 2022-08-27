@@ -20,7 +20,6 @@
             <label for="password">Senha: </label>
             <input required id="password" type="password" name="password" placeholder="Senha">
             <label for="password" class="label">Confirme sua senha</label>
-            <input required type="password" class="form-control" placeholder="Confirme sua senha" id="password_confirmation" name="password_confirmation">
             <label for="userType">Insira o tipo de usuário: </label>
             <input required type="text" name="userType" placeholder="Insira o tipo de usuario">
             <button>Registrar</button>

@@ -9,7 +9,7 @@
 <body>
     <h1>Bem-vindo</h1>
     <a href="">Saiba mais</a>
-    <form action="/login" method="POST">
+    <form action="{{url('/login')}}" method="GET">
         <button>Login</button>            
     </form>
 </body>

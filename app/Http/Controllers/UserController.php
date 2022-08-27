@@ -12,4 +12,8 @@ class UserController extends Controller
         
         return view('');
     }
+
+    public function home(){
+        return view('dashboard');
+    }
 }
