@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Content;
 
 class ContentController extends Controller
 {
@@ -37,11 +38,13 @@ class ContentController extends Controller
      */
     public function store(Request $request)
     {
+
         $content = new Content;
         $content->title = $request->title;
         $content->text = $request->text;
+        $content->user_id = 1;
         $content->save();
-        return redirect(url('/HomeUser'));
+        return redirect('HomeUser');
     }
     public function home(){
         return view('dashboard');
