@@ -15,7 +15,7 @@ class ContentController extends Controller
     public function index()
     {
         $content = Content::all();
-        return view ('content.dashboard', [
+        return view ('dashboard', [
             'content' => $content,
         ]);
     }
@@ -44,10 +44,7 @@ class ContentController extends Controller
         $content->text = $request->text;
         $content->user_id = 1;
         $content->save();
-        return redirect('HomeUser');
-    }
-    public function home(){
-        return view('dashboard');
+        return redirect('contents');
     }
 
     /**
@@ -56,7 +53,7 @@ class ContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         $content = Content::find ($id);
         return view('content.edit', [

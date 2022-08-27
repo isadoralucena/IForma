@@ -34,9 +34,6 @@ Route::middleware('guest')->group(function () {
 
     Route::post('reset-password', [NewPasswordController::class, 'store'])
                 ->name('password.update');
-
-    Route::get('HomeUser', [UserController::class, 'home'])
-                ->name('HomeUser');
                 
     Route::get('createContents', [ContentController::class, 'create'])
                 ->name('createContents');
