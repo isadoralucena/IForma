@@ -41,7 +41,10 @@ class ContentController extends Controller
         $content->title = $request->title;
         $content->text = $request->text;
         $content->save();
-        return redirect(url('/contents'));
+        return redirect(url('/HomeUser'));
+    }
+    public function home(){
+        return view('dashboard');
     }
 
     /**
