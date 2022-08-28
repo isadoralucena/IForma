@@ -7,7 +7,7 @@
     <title>Create</title>
 </head>
 <body>
-    <form action="{{url('/contents')}}" method="POST">
+    <form action="{{url('/createContents')}}" method="POST">
         @csrf
         <label for="title">Título</label>
         <input required type="title" name="title" id="title">

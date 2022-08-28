@@ -16,10 +16,10 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 100);
-            $table->string('email', 100)->unique();
+            $table->string('name');
+            $table->string('email')->unique();
             $table->date('date');
-            $table->text('password');
+            $table->string('password');
             $table->integer("userType")->default('1');
             // 1 aluno
             // 2 professor

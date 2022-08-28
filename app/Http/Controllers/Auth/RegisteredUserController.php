@@ -48,7 +48,7 @@ class RegisteredUserController extends Controller
             'userType' => $request->userType,
             'date' => $request->date
         ]);
-        $user->save();
+        
         event(new Registered($user));
 
         Auth::login($user);

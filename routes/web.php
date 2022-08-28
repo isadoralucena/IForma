@@ -18,10 +18,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::resource('/dashboard', ContentController::class);
 
-Route::resource('/contents', ContentController::class);
+Route::get('/createContents', [ContentController::class, 'create'])->name('/createContents');
+Route::post('/createContents', [ContentController::class, 'store'])->name('createContents');
 
 require __DIR__.'/auth.php';

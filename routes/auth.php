@@ -35,10 +35,7 @@ Route::middleware('guest')->group(function () {
     Route::post('reset-password', [NewPasswordController::class, 'store'])
                 ->name('password.update');
                 
-    Route::get('createContents', [ContentController::class, 'create'])
-                ->name('createContents');
-    Route::post('contents', [ContentController::class, 'store'])
-                ->name('createContents');
+   
 });
 
 Route::middleware('auth')->group(function () {

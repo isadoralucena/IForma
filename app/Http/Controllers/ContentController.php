@@ -44,7 +44,7 @@ class ContentController extends Controller
         $content->text = $request->text;
         $content->user_id = 1;
         $content->save();
-        return redirect('contents');
+        return redirect('dashboard');
     }
 
     /**

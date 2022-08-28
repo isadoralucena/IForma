@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <script src="{{ asset('js/validate.js') }}"></script>
+    {{-- <script src="{{ asset('js/validate.js') }}"></script> --}}
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
 
 </head>
@@ -26,6 +26,9 @@
                 
                 <label for="password">Senha: </label>
                 <input required id="password" type="password" name="password" placeholder="Senha">
+
+                <label for="password">Confirme sua senha: </label>
+                <input required id="password_confirmation" type="password" name="password_confirmation" placeholder="Senha">
                 
                 <!-- <label for="password" class="label">Confirme sua senha</label> -->
                 
