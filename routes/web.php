@@ -19,7 +19,10 @@ Route::get('/', function () {
 });
 Route::middleware(['auth'])->group(function (){
     //only authenticated people access the contents
+    Route::get('/contents/teachercontrolpane', [ContentController::class, 'teachercontrolpane']);
+    Route::get('/contents/admincontrolpane', [ContentController::class, 'admincontrolpane']);
     Route::resource('/contents', ContentController::class);
+    
 });
 
 require __DIR__.'/auth.php';

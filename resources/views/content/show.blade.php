@@ -8,7 +8,7 @@
 </head>
 <body>
     <p>
-        <a href="{{url('/contents/' . $content->id)}}">
+        <a href="{{url('/contents/', ['id'=>$content->id])}}">
             {{$content->title}}
         </a>
     </p>

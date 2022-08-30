@@ -13,7 +13,6 @@ class ContentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
     public function index()
     {
         $contents = Content::all();
@@ -21,7 +20,22 @@ class ContentController extends Controller
             'contents' => $contents,
         ]);
     }
+    
+    public function teachercontrolpane()
+    {
+        $contents = Content::all();
 
+        return view ('teacherControlPane', [
+            'contents' => $contents,
+        ]);
+    }
+    public function admincontrolpane()
+    {
+        $contents = Content::all();
+        return view ('adminControlPane', [
+            'contents' => $contents,
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -54,7 +68,7 @@ class ContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)//TERMINAR DAQUI
+    public function show($id)
     {
         $content = Content::find ($id);
         return view('content.show', [
