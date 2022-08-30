@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->date('date');
             $table->string('password');
-            $table->integer("userType")->default('1');
+            //$table->integer("userType")->default('1');
+            $table->integer("userType");
             // 1 aluno
             // 2 professor
             // 3 admin
