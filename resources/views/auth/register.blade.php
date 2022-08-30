@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     {{-- <script src="{{ asset('js/validate.js') }}"></script> --}}
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
+    <link href="{{asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
 
 </head>
 <body>
     <div class="texts all">
         <div class="register">
-            <h1 class="titles">Cadastre um usuário!</h1>
+            <h1 class="titles">Cadastre um usuário</h1>
             <form action="{{url('/register')}}" method="POST">
             @csrf
                 <label for="name">Nome: </label>
@@ -28,16 +28,17 @@
                 <input required id="password" type="password" name="password" placeholder="Senha">
 
                 <label for="password">Confirme sua senha: </label>
-                <input required id="password_confirmation" type="password" name="password_confirmation" placeholder="Senha">
+                <input required id="password_confirmation" type="password" name="password_confirmation" placeholder="Confirme senha">
                 
-                <!-- <label for="password" class="label">Confirme sua senha</label> -->
                 
                 <label for="userType">Insira o tipo de usuário: </label>
-                <input required type="text" name="userType" placeholder="Insira o tipo de usuario">
+                <!-- the default value is 1, so it doesn't need to be required-->
+                <input type="text" name="userType" placeholder="Insira o tipo de usuario">
                 
                 <button class="bigButton">Registrar</button>
             </form>
         </div>
     </div>
+    <a href="{{url('/login')}}">Já tem conta? Faça login</a>
 </body>
 </html>

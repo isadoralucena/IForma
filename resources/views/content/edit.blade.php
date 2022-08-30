@@ -7,14 +7,14 @@
     <title>Edit</title>
 </head>
 <body>
-    <form action="{{url('/contents'), ['content'=>$content->id])}}" method="POST">
+    <form action="{{url('/contents', ['content'=>$content->id])}}" method="POST">
         @csrf
         @method('PUT')
         <label for="title">Título</label>
         <input required type="title" name="title" id="title" value="{{$content->title}}">
         <label for="text">Texto</label>
         <input required type="text" name="text" id="text" value="{{$content->text}}">
-        <button type="submit">Criar</button>
+        <button type="submit">Editar</button>
     </form>
 </body>
 </html>

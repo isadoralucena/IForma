@@ -17,10 +17,9 @@ use App\Http\Controllers\ContentController;
 Route::get('/', function () {
     return view('home');
 });
-
-Route::resource('/dashboard', ContentController::class);
-
-Route::get('/createContents', [ContentController::class, 'create'])->name('/createContents');
-Route::post('/createContents', [ContentController::class, 'store'])->name('createContents');
+Route::middleware(['auth'])->group(function (){
+    //only authenticated people access the contents
+    Route::resource('/contents', ContentController::class);
+});
 
 require __DIR__.'/auth.php';

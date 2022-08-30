@@ -31,14 +31,9 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-        //condição do tipo de user
-        //pode-se ter uma única home, só definir tags para limitar o que vai ser exibido de acordo com o type
-        // $user = Auth::user();
-        // if($user>type === '3'){//admin vai ta cadastrado no banco
-        //     return redirect()->intended(RouteServiceProvider::ADMIN);//vai p home de admin
-        // }else{
-            return redirect()->intended(RouteServiceProvider::HOME);//vai p home de user comum
-        //}
+        
+        return redirect()->intended(RouteServiceProvider::HOME);
+
     }
 
     /**

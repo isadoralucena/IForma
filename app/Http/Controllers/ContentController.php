@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Content;
+use Illuminate\Support\Facades\Auth;
 
 class ContentController extends Controller
 {
@@ -12,11 +13,12 @@ class ContentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
-        $content = Content::all();
+        $contents = Content::all();
         return view ('dashboard', [
-            'content' => $content,
+            'contents' => $contents,
         ]);
     }
 
@@ -38,13 +40,12 @@ class ContentController extends Controller
      */
     public function store(Request $request)
     {
-
         $content = new Content;
+        $content->user_id = Auth::id();
         $content->title = $request->title;
         $content->text = $request->text;
-        $content->user_id = 1;
         $content->save();
-        return redirect('dashboard');
+        return redirect(url('/contents'));
     }
 
     /**
@@ -53,10 +54,10 @@ class ContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)//TERMINAR DAQUI
     {
         $content = Content::find ($id);
-        return view('content.edit', [
+        return view('content.show', [
             'content' => $content,
         ]);
     }
@@ -82,18 +83,14 @@ class ContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $content = Content::find ($id);
-        if (NULL !== $request->post('content')){
-            $content->title = $request->post('content');
-            $content->text = $request->post('content');
-        }else{
-            $content->status = 1;
-        }
+    public function update(Request $request, $id)//FALTA TERMINAR AQUI
+    { 
+        $content = Content::find($id);
+        $content->user_id = Auth::id();
+        $content->title = $request->input('title');
+        $content->text = $request->input('text');
         $content->save();
-
-        return redirect()->to(route('content.show', [
+        return redirect()->to(route('contents.show', [
             'content' => $content->id,
         ]));
     }
@@ -106,6 +103,8 @@ class ContentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $content = Content::find($id);
+        $content->delete();
+        return redirect(url('/contents'));
     }
 }

@@ -9,12 +9,13 @@
 <body>
     <h1>Login</h1>
     <form action="{{url('/login')}}" method="POST">
-    @csrf
-        <label required for="email">E-mail: </label>
-        <input requirtype="email" name="email" placeholder="nome@escolar.ifrn.edu.br">
+        @csrf
+        <label for="email">E-mail: </label>
+        <input required type="email" name="email" placeholder="nome@escolar.ifrn.edu.br">
         <label for="password">Senha: </label>
-        <input type="password" name="password" placeholder="password">
+        <input required type="password" name="password" placeholder="Senha">
         <button>Acessar</button>
     </form>
+    <a href="{{url('/register')}}">Registre-se</a>
 </body>
 </html>
