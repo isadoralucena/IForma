@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,10 @@ Route::get('/', function () {
 });
 Route::middleware(['auth'])->group(function (){
     //only authenticated people access the contents
+    //only admin can register users
+    Route::get('register', [RegisteredUserController::class, 'create'])
+        ->name('register');
+    Route::post('register', [RegisteredUserController::class, 'store']);
     Route::get('/contents/teachercontrolpane', [ContentController::class, 'teachercontrolpane']);
     Route::get('/contents/admincontrolpane', [ContentController::class, 'admincontrolpane']);
     Route::resource('/contents', ContentController::class);

@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    {{-- <script src="{{ asset('js/validate.js') }}"></script> --}}
     <link href="{{asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
-
+    <script src="{{asset('js/validate.js')}}"></script>
 </head>
 <body>
     <div class="texts all">
@@ -32,13 +31,11 @@
                 
                 
                 <label for="userType">Insira o tipo de usuário: </label>
-                <!-- the default value is 1, so it doesn't need to be required-->
-                <input type="text" name="userType" placeholder="Insira o tipo de usuario">
+                <input required type="text" name="userType" placeholder="Insira o tipo de usuario">
                 
                 <button class="bigButton">Registrar</button>
             </form>
         </div>
     </div>
-    <a href="{{url('/login')}}">Já tem conta? Faça login</a>
 </body>
 </html>

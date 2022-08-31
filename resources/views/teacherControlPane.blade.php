@@ -23,6 +23,7 @@
         </thead>
         <tbody>
             @foreach ($contents as $item)
+            {{-- teachers can only edit their content --}}
             @if($item->user_id == Auth::id())
                 <tr>
                     <td>{{$item->id}}</td>

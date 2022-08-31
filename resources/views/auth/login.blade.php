@@ -16,6 +16,5 @@
         <input required type="password" name="password" placeholder="Senha">
         <button>Acessar</button>
     </form>
-    <a href="{{url('/register')}}">Registre-se</a>
 </body>
 </html>

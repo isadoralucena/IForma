@@ -6,10 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
+    <p>Pessoa logada: {{Auth::user()->name}}</p>
     <form action="{{url('/logout')}}" method="POST">
         @csrf
         <button type="submit" class="dropdown-item">sair</button>                                    
-    </form>   
+    </form>
+    @if(Auth::user()->userType === 2)
+        <form action="{{url('/contents/teachercontrolpane')}}" method="GET">
+            <button type="submit">Painel de controle do professor</button>
+        </form>
+    @endif    
+    @if(Auth::user()->userType === 3)
+        <form action="{{url('/contents/admincontrolpane')}}" method="GET">
+            <button type="submit">Painel de controle do administrador</button>
+        </form>
+        <a href="{{url('/register')}}">Cadastros de usuários</a>
+    @endif
     @yield('header')
 </body>
 </html>
