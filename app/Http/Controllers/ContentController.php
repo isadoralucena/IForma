@@ -29,10 +29,10 @@ class ContentController extends Controller
             'contents' => $contents,
         ]);
     }
-    public function admincontrolpane()
+    public function admincontrolpanecont()
     {
         $contents = Content::all();
-        return view ('adminControlPane', [
+        return view ('adminControlPaneCont', [
             'contents' => $contents,
         ]);
     }

@@ -17,10 +17,14 @@
         </form>
     @endif    
     @if(Auth::user()->userType === 3)
-        <form action="{{url('/contents/admincontrolpane')}}" method="GET">
-            <button type="submit">Painel de controle do administrador</button>
+        <form action="{{url('/contents/admincontrolpanecont')}}" method="GET">
+            <button type="submit">Painel de controle do administrador- conteúdos</button>
         </form>
         <a href="{{url('/register')}}">Cadastros de usuários</a>
+
+        <form action="{{url('/users/admincontrolpaneuser')}}" method="GET">
+            <button type="submit">Painel de controle do administrador- users</button>
+        </form>
     @endif
     @yield('header')
 </body>

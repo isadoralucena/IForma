@@ -20,8 +20,10 @@
                 <th>Deletar</th>
                 <th>Mostrar tudo</th>
             </tr>
-        </thead>
+        </thead> 
         <tbody>
+            {{-- é preciso ve a questao das senhas  --}}
+            {{-- é uma requisição por view, então é preciso criar outro adminControlPane --}}
             @foreach ($contents as $item)
             <tr>
                 <td>{{$item->id}}</td>
