@@ -29,7 +29,6 @@ class UserController extends Controller
             'users' => $user,
         ]);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -39,7 +38,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = new User;
-        $user->id = Auth::id();
+        //$user->id = Auth::id();
         $user->name = $request->name;
         $user->userType = $request->userType;
         $user->email = $request->email;
@@ -86,7 +85,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        $user->id = Auth::id();
+        //$user->id = Auth::id();
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->userType = $request->input('userType');
