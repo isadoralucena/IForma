@@ -19,12 +19,17 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('register', [RegisteredUserController::class, 'create'])
+        ->name('register');
+Route::post('register', [RegisteredUserController::class, 'store']);
+
 Route::middleware(['auth'])->group(function (){
     //only authenticated people access the contents
     //only admin can register users
-    Route::get('register', [RegisteredUserController::class, 'create'])
-        ->name('register');
-    Route::post('register', [RegisteredUserController::class, 'store']);
+    // Route::get('register', [RegisteredUserController::class, 'create'])
+    //     ->name('register');
+    // Route::post('register', [RegisteredUserController::class, 'store']);
 
     Route::resource('/users', UserController::class);
 
