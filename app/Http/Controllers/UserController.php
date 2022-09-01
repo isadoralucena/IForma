@@ -17,7 +17,6 @@ class UserController extends Controller
     {
         $users = User::all();
         //poderia ir para dashboard, mas fica conflitando com o controller de contents
-        //return view ('dashboard', [
         return view ('adminControlPaneUser', [
             'users' => $users,
         ]);
@@ -84,9 +83,7 @@ class UserController extends Controller
         $user->userType = $request->input('userType');
         $user->date = $request->input('date');
         $user->save();
-        return redirect()->to(route('users.show', [
-            'user' => $user->id,
-        ]));
+        return redirect(url('/users'));
     }
 
     /**
