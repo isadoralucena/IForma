@@ -22,13 +22,6 @@ class UserController extends Controller
             'users' => $users,
         ]);
     }
-    public function admincontrolpaneuser()
-    {
-        $user = User::all();
-        return view ('adminControlPaneUser', [
-            'users' => $user,
-        ]);
-    }
     /**
      * Store a newly created resource in storage.
      *

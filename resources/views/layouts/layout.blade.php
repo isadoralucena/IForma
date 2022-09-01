@@ -22,7 +22,7 @@
         </form>
         <a href="{{url('/register')}}">Cadastros de usuários</a>
 
-        <form action="{{url('/users/admincontrolpaneuser')}}" method="GET">
+        <form action="{{url('/users')}}" method="GET">
             <button type="submit">Painel de controle do administrador- users</button>
         </form>
     @endif

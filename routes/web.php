@@ -26,7 +26,6 @@ Route::middleware(['auth'])->group(function (){
         ->name('register');
     Route::post('register', [RegisteredUserController::class, 'store']);
 
-    Route::get('/users/admincontrolpaneuser', [UserController::class, 'admincontrolpaneuser']);
     Route::resource('/users', UserController::class);
 
     Route::get('/contents/teachercontrolpane', [ContentController::class, 'teachercontrolpane']);
