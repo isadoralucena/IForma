@@ -8,11 +8,11 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
 </head>
 <body> 
-    <div class="texts">
-    <h1 class="titles">Bem-vindo</h1>
-    <form action="{{url('/login')}}" method="GET">
-        <button class="littleButton">Login</button>            
-    </form>
+    <div class="center texts ">
+        <h1 class="titles">Bem-vindo</h1>
+        <form action="{{url('/login')}}" method="GET">
+            <button class="littleButton">Login</button>            
+        </form>
     </div> 
 </body>
 </html>

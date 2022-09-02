@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
 </head>
 <body>
-    <p>Pessoa logada: {{Auth::user()->name}}</p>
-    <form action="{{url('/logout')}}" method="POST">
-        @csrf
-        <button type="submit" class="dropdown-item">sair</button>                                    
-    </form>
-    @if(Auth::user()->userType === 2)
-        <form action="{{url('/contents/teachercontrolpane')}}" method="GET">
-            <button type="submit">Painel de controle do professor</button>
-        </form>
-    @endif    
-    @if(Auth::user()->userType === 3)
-        <form action="{{url('/contents/admincontrolpanecont')}}" method="GET">
-            <button type="submit">Painel de controle do administrador- conteúdos</button>
-        </form>
-        <a href="{{url('/register')}}">Cadastros de usuários</a>
+    <div class="header">
+        @if(Auth::user()->userType === 2)
+            <form action="{{url('/contents/teachercontrolpane')}}" method="GET">
+                <button type="submit">Painel de controle do professor</button>
+            </form>
+        @endif    
+        @if(Auth::user()->userType === 3)
+            <form action="{{url('/contents/admincontrolpanecont')}}" method="GET">
+                <button type="submit">Painel de controle do administrador- conteúdos</button>
+            </form>
+            <a href="{{url('/register')}}">Cadastros de usuários</a>
 
-        <form action="{{url('/users')}}" method="GET">
-            <button type="submit">Painel de controle do administrador- users</button>
+            <form action="{{url('/users')}}" method="GET">
+                <button type="submit">Painel de controle do administrador- users</button>
+            </form>
+        @endif
+        <p>Pessoa logada: {{Auth::user()->name}}</p>
+        <form action="{{url('/logout')}}" method="POST">
+            @csrf
+            <button type="submit" class="dropdown-item">sair</button>                                    
         </form>
-    @endif
-    @yield('header')
+        @yield('header')
+    </div>
 </body>
 </html>

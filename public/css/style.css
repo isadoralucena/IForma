@@ -55,16 +55,23 @@ input{
 }
 /* Pagina de registro */
 .all{
-    height: 100%;
-    width: 320;
     display: inline-block;
     border: solid 1px black;
 }
 .register{
-
-    border: solid 1px black;
     display:block;
     width: 320px;
     height: 400px;
-    padding: 10px;
+}
+.center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+/* padrão de padding */
+.padding{
+    border-radius: 10px;
+    padding: 3%;
+    border: 1px solid black;
 }
