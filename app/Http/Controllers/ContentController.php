@@ -104,7 +104,9 @@ class ContentController extends Controller
         $content->title = $request->input('title');
         $content->text = $request->input('text');
         $content->save();
-        return redirect(url('/contents'));
+        return redirect()->to(route('contents.show', [
+            'content' => $content->id,
+        ]));
     }
 
     /**
