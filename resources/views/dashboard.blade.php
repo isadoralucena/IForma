@@ -1,5 +1,6 @@
 @extends('layouts.layout')
 @section('header')
+@section('body')
 <h1>Dashboard</h1>
 
 @foreach ($contents as $item)
@@ -8,6 +9,7 @@
         <p style="margin: 0px">{{$item->text}}</p>
         <p>Autor: {{$item->user->name}}</p>
     </div>
+
 @endforeach
 
 @endsection

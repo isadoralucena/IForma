@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Painel de controle do administrador</title>
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
-</head>
-<body> 
-    <div class="center">
-        <a href="{{url('/register')}}">Cadastro de user</a>
-
+@extends('layouts.layout')
+@section('header')
+@section('body')
+    <p class="centerA">
+        <a href="{{url('/register')}}">Cadastro de usuários</a>
+    </p>
+    <div class="centerTable">
         <table style="border: 1px solid black">
             <thead>
                 <tr>
@@ -18,6 +12,9 @@
                     <th>Nome</th>
                     <th>Tipo de usuário</th>
                     <th>Data de aniversário</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
+                    <th>Mostrar tudo</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,5 +46,5 @@
         </table>
     </div>
     
-</body>
-</html>
+
+@endsection
