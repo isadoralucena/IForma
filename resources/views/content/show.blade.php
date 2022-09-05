@@ -7,15 +7,8 @@
     <title>Show</title>
 </head>
 <body>
-    <p>
-        <a href="{{url('/contents/', ['id'=>$content->id])}}">
-            {{$content->title}}
-        </a>
-    </p>
-    <p>
-        <a href="{{url('/contents/', ['id'=>$content->id])}}">
-            {{$content->text}}
-        </a>
-    </p>
+    <p>{{$content->title}}</p>
+
+    <p>{{$content->text}}</p>
 </body>
 </html>

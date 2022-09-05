@@ -9,7 +9,7 @@
     <script src="{{asset('js/validate.js')}}"></script>
 </head>
 <body>
-    <div class="padding center texts all">
+    <div class="padding center texts">
         <div class="register">
             <h1 class="titles">Cadastre um usuário</h1>
             <form action="{{url('/register')}}" method="POST">

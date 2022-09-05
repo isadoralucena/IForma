@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
     <title>Create</title>
 </head>
 <body>
+    <div class="padding center texts">
     <form action="{{url('/users', ['user'=>$user->id])}}" method="POST">
         @csrf
         @method('PUT')
@@ -24,5 +26,6 @@
         
         <button class="bigButton">Registrar</button>
     </form>
+    </div>
 </body>
 </html>

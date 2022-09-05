@@ -14,7 +14,7 @@
             <label for="title">Título</label>
             <input required type="title" name="title" id="title">
             <label for="text">Texto</label>
-            <input required type="text" name="text" id="text">
+            <textarea required type="text" name="text" id="text"></textarea>
             <button class="littleButton" type="submit">Criar</button>
         </form>
     </div>

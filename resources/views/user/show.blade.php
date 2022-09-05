@@ -7,25 +7,9 @@
     <title>Edit</title>
 </head>
 <body>
-    <p>
-        <a href="{{url('/users/', ['id'=>$user->id])}}">
-            {{$user->name}}
-        </a>
-    </p>
-    <p>
-        <a href="{{url('/users/', ['id'=>$user->id])}}">
-            {{$user->date}}
-        </a>
-    </p>
-    <p>
-        <a href="{{url('/users/', ['id'=>$user->id])}}">
-            {{$user->email}}
-        </a>
-    </p>
-    <p>
-        <a href="{{url('/users/', ['id'=>$user->id])}}">
-            {{$user->userType}}
-        </a>
-    </p>
+    <p>{{$user->name}}</p>
+    <p>{{$user->date}}</p>
+    <p>{{$user->email}}</p>
+    <p>{{$user->userType}}</p>
 </body>
 </html>

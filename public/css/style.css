@@ -6,6 +6,17 @@
 body{
     background-color: aliceblue;
 }
+textarea{
+    overflow: hidden;
+    font-family:Nunito Sans, sans-serif;
+    width: 300px;
+    height: 100px;
+    border-radius: 5px;
+    display: block;
+    background-color: aliceblue;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
 /* padrão dos botões pequenos */
 .littleButton{
     background-color: black;
@@ -54,10 +65,6 @@ input{
     font-family:Nunito Sans, sans-serif;
 }
 /* Pagina de registro */
-.all{
-    display: inline-block;
-    border: solid 1px black;
-}
 .register{
     display:block;
     width: 320px;
@@ -95,7 +102,6 @@ input{
     background-color: rgb(79, 167, 92);
 }
 .header .imgLogo{
-    float: left;
     max-width:80%;
     height:auto;
 }
