@@ -12,7 +12,7 @@
     <div class="padding center texts">
         <div class="register">
             <h1 class="titles">Cadastre um usuário</h1>
-            <form action="{{url('/register')}}" method="POST">
+            <form onsubmit="return validate();" action="{{url('/register')}}" method="POST">
             @csrf
                 <label for="name">Nome: </label>
                 <input required type="text" name="name" placeholder="Nome">
@@ -33,7 +33,7 @@
                 <label for="userType">Insira o tipo de usuário: </label>
                 <input required type="text" name="userType" placeholder="Insira o tipo de usuario">
                 
-                <button class="bigButton">Registrar</button>
+                <button type="submit" class="bigButton">Registrar</button>
             </form>
         </div>
     </div>

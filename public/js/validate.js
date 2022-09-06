@@ -1,12 +1,10 @@
 function validate() {
-    var conteudo = document.getElementById('pass').value;
-
-    alert(conteudo);
+    var conteudo = document.getElementById('password').value;
 
     if((conteudo.length < 8) || (conteudo.length > 14)){
         alert("Tamanho de senha invalido")
+        return false;
     }else{
-
         var letra = /[a-z]{1}/i;
 
         var conteudoCLetra = letra.exec(conteudo[0]);
@@ -41,22 +39,23 @@ function validate() {
 
                     if (auxin.length>=2) {
                         alert("Senha valida");
+                        return true;
                     }else{
                         alert("Senha deve conter dois numeros");
+                        return false;
                     }
-
-
                 }else{
-                    alert("Senha deve conter pelo menos um algarismo maiusculo e minusculo");
+                    alert("Senha deve conter pelo menos uma letra maiusculo e minusculo");
+                    return false;
                 }
-
-
             }else{
-                alert("Senha contem menos de dois simbolos");
+                alert("Senha contem menos de dois simbolos #@!$");
+                return false;
             }
 
         }else{
             alert("primeira algarismo deve ser uma letra")
+            return false;
         }
     }
     
