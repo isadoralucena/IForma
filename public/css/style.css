@@ -26,6 +26,11 @@ textarea{
     height: 25px;
     width: 70px;
     font-family:Nunito Sans, sans-serif;
+    font-weight:bold;
+}
+.littleButton:hover{
+    background-color: #006400;
+    transition: 2s;
 }
 /* padrão botões grandes */
 .bigButton{
@@ -58,9 +63,23 @@ input{
     font-family:Nunito Sans, sans-serif;
     margin-bottom: 10px;
 }
+.titles2{
+    color: white;
+    font-size: 30px;
+    font-style: bold;
+    font-family:Nunito Sans, sans-serif;
+    margin-bottom: 10px;
+}
+
 /* padrão de textos pequenos */
 .texts{
     color: black;
+    font-size: 15px;
+    font-family:Nunito Sans, sans-serif;
+}
+
+.texts2{
+    color: white;
     font-size: 15px;
     font-family:Nunito Sans, sans-serif;
 }
@@ -198,6 +217,39 @@ table{
     float: right;
 }
 
-  
 
 
+/* login  */
+.login{
+    width: 50%;
+    height: 100%;
+    background-color:rgb(79, 167, 92);
+    position: absolute;
+}
+.login2{
+    background-color: rgb(79, 167, 92);
+   }
+.login3{
+width: 25%;
+ height: 100%;
+ margin-left: 50%;
+ padding-left: 25%;
+ position: absolute;
+}
+.imgLogin{
+    width: 40%;
+    margin-bottom: 15pt;
+}
+.inputLogin{
+    margin-top: 10pt;
+    border-color: aliceblue;
+}
+.inputLogin:hover{
+    border-color: #006600;
+}
+.buttonLogin{
+    margin-top: 8pt;
+}
+.logLogin{
+    margin-bottom: 13pt;
+}
