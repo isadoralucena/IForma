@@ -29,8 +29,9 @@ textarea{
     font-weight:bold;
 }
 .littleButton:hover{
-    background-color: #006400;
+    background-color: #094033;
     transition: 2s;
+     border-color: #094033;
 }
 /* padrão botões grandes */
 .bigButton{
@@ -42,6 +43,11 @@ textarea{
     width: 200px;
     font-family:Nunito Sans, sans-serif;
     margin-left: 50px;
+}
+.bigButton:hover{
+    background-color: #094033;
+    transition: 2s;
+    border-color: #094033;
 }
 /* inputs */
 input{
@@ -65,7 +71,7 @@ input{
 }
 .titles2{
     color: white;
-    font-size: 30px;
+    font-size: 30pt;
     font-style: bold;
     font-family:Nunito Sans, sans-serif;
     margin-bottom: 10px;
@@ -228,6 +234,7 @@ table{
 }
 .login2{
     background-color: rgb(79, 167, 92);
+    border-color: rgb(79, 167, 92) ;
    }
 .login3{
 width: 25%;
@@ -235,6 +242,7 @@ width: 25%;
  margin-left: 50%;
  padding-left: 25%;
  position: absolute;
+
 }
 .imgLogin{
     width: 40%;
@@ -252,4 +260,40 @@ width: 25%;
 }
 .logLogin{
     margin-bottom: 13pt;
+}
+
+
+/*  home */
+.headerHome{
+   top: 0;
+    height: 60px;
+    padding: 2% 0 2%;
+    width: 100%;
+    position: sticky;
+    z-index: 2;
+    background-color: rgb(79, 167, 92);
+}
+.imgHome{
+    width: 15%;
+    padding-left: 10pt;
+}
+.imgHome2{
+    width: 40%;
+    float: left;
+}
+.home{
+    background-color: #8cb98c;
+}
+.textHome{
+    color: white;
+    font-size: 15px;
+    font-family:Nunito Sans, sans-serif;
+    text-align: center;
+    margin-top: 20pt;
+}
+#buttonHome{
+    margin-top: 20%;
+}
+.titleHome{
+    margin-bottom: 20pt;
 }
