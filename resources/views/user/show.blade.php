@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit</title>
+    <title>Show</title>
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
 </head>
 <body>
-    <p>{{$user->name}}</p>
-    <p>{{$user->date}}</p>
-    <p>{{$user->email}}</p>
-    <p>{{$user->userType}}</p>
+    <div class="center">
+        <p>{{$user->name}}</p>
+        <p>{{$user->date}}</p>
+        <p>{{$user->email}}</p>
+        <p>{{$user->userType}}</p>
+    </div>
 </body>
 </html>

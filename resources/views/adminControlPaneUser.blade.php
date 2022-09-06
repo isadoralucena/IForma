@@ -22,7 +22,15 @@
                 <tr>
                     <td>{{$item->id}}</td>
                     <td>{{$item->name}}</td>
-                    <td>{{$item->userType}}</td>
+                    @if($item->userType === 1)
+                        <td>Aluno</td>
+                    @elseif($item->userType === 2)
+                        <td>Prof</td>
+                    @elseif($item->userType === 3)
+                        <td>Admin</td>
+                    @else
+                        <td>{{$item->userType}}</td>
+                    @endif
                     <td>{{$item->date}}</td>
                     <td>
                         <a href="{{url('/users/' . $item->id. '/edit')}}">Editar</a>
