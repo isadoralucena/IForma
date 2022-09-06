@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="padding center texts">
+
         <form action="{{url('/contents', ['content'=>$content->id])}}" method="POST">
             @csrf
             @method('PUT')

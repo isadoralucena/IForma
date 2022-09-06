@@ -8,34 +8,46 @@
     <link href="{{asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
     <script src="{{asset('js/validate.js')}}"></script>
 </head>
-<body>
-    <div class="padding center texts">
+<body class="register2">
+    <div class="headerHome">   
+            <img  onclick="window.location='{{ url('/register')}}'" class="imgHome center" src="{{ asset('images/logo.png') }}">
+    </div>
+
+<div class="register1">
+    <div class="padding center texts register1 ">
         <div class="register">
-            <h1 class="titles">Cadastre um usuário</h1>
+            <h1 class="titles3">Cadastre um usuário</h1>
             <form onsubmit="return validate();" action="{{url('/register')}}" method="POST">
             @csrf
-                <label for="name">Nome: </label>
+                <label class="titleRegister" for="name">Nome: </label>
                 <input required type="text" name="name" placeholder="Nome">
                 
-                <label for="date">Data de nascimento: </label>
+                <label class="titleRegister" for="date">Data de nascimento: </label>
                 <input required type="date" name="date" placeholder="Data de nascimento">
                 
-                <label for="email">E-mail: </label>
+                <label class="titleRegister" for="email">E-mail: </label>
                 <input required type="email" name="email" placeholder="nome@escolar.ifrn.edu.br">
                 
-                <label for="password">Senha: </label>
+                <label class="titleRegister" for="password">Senha: </label>
                 <input required id="password" type="password" name="password" placeholder="Senha">
 
-                <label for="password">Confirme sua senha: </label>
+                <label class="titleRegister" for="password">Confirme sua senha: </label>
                 <input required id="password_confirmation" type="password" name="password_confirmation" placeholder="Confirme senha">
                 
                 
-                <label for="userType">Insira o tipo de usuário: </label>
+                <label class="titleRegister" for="userType">Insira o tipo de usuário: </label>
                 <input required type="text" name="userType" placeholder="Insira o tipo de usuario">
-                
-                <button type="submit" class="bigButton">Registrar</button>
+                <div class="buttonRegister">
+                    <button type="submit" class="bigButton">Registrar</button> 
+                </div>
+               
             </form>
         </div>
     </div>
+
+
+
+</div>
+    
 </body>
 </html>

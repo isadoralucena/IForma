@@ -15,12 +15,10 @@
     </div>
      
     <div class="center textHome home">
- 
-            
         <h1 class="titles2 titleHome">Bem-vindo</h1>
         <h1 >IForma, a plataforma que informa!</h1>
         <form action="{{url('/login')}}" method="GET">
-            <button class="bigButton" id="buttonHome">Login</button>            
+            <button class="bigButtonHome" id="buttonHome">Login</button>            
         </form>
     </div> 
  <img  onclick="window.location='{{ url('/')}}'" class="imgHome2 home" src="{{ asset('images/detail.png') }}">

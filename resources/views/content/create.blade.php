@@ -7,13 +7,18 @@
     <title>Create</title>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
 </head>
-<body>
-    <div class="center padding texts">
+<body class="register2">
+
+     <div class="headerHome">   
+            <img  onclick="window.location='{{ url('/contents/create')}}'" class="imgHome center" src="{{ asset('images/logo.png') }}">
+    </div>
+    <div class="center padding texts create1">
+
         <form action="{{url('/contents')}}" method="POST">
             @csrf
-            <label for="title">Título</label>
+            <label for="title" class="create2"><b>Título</b></label>
             <input required type="title" name="title" id="title">
-            <label for="text">Texto</label>
+            <label for="text"><b>Texto</b></label>
             <textarea required type="text" name="text" id="text"></textarea>
             <button class="littleButton" type="submit">Criar</button>
         </form>
