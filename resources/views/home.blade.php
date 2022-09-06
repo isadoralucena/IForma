@@ -7,15 +7,26 @@
     <title>Home</title>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
 </head>
-<body> 
-    <div class="center texts ">
-     <img  onclick="window.location='{{ url('/')}}'" class="imgLogo" src="{{ asset('images/logo.png') }}">
+<body class="home"> 
+    <div class="home">
+        
+    <div class="headerHome">   
+            <img  onclick="window.location='{{ url('/')}}'" class="imgHome center" src="{{ asset('images/logo.png') }}">
+    </div>
+     
+    <div class="center textHome home">
+ 
             
-        <h1 class="titles">Bem-vindo</h1>
-        <h1>IForma, a plataforma que informa</h1>
+        <h1 class="titles2 titleHome">Bem-vindo</h1>
+        <h1 >IForma, a plataforma que informa!</h1>
         <form action="{{url('/login')}}" method="GET">
-            <button class="littleButton">Login</button>            
+            <button class="bigButton" id="buttonHome">Login</button>            
         </form>
     </div> 
+ <img  onclick="window.location='{{ url('/')}}'" class="imgHome2 home" src="{{ asset('images/detail.png') }}">
+    </div>
+
+   
+    
 </body>
 </html>
