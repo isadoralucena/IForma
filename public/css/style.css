@@ -9,6 +9,9 @@ body{
 * input:focus-visible{
     outline: none;
 }
+* textarea:focus-visible{
+    outline: none;
+}
 .content{
     width: 75%; 
     margin-left: auto;
@@ -66,9 +69,9 @@ textarea{
     font-weight:bold;
 }
 .littleButton:hover{
-    background-color: #2a842a;
-    transition: 2s;
-     border-color: #2a842a;
+    background-color: #04201a;
+    transition: 1s;
+    border-color: #031813;
 }
 /* padrão botões grandes */
 .bigButton{
@@ -82,9 +85,9 @@ textarea{
     margin-left: 50px;
 }
 .bigButton:hover{
-    background-color: #2a842a;
-    transition: 2s;
-    border-color: #2a842a;
+    background-color:#04201a;
+    transition: 1s;
+    border-color: #031813;
 }
 /* inputs */
 input{
@@ -101,13 +104,13 @@ input{
 /* padrão de titulos */
 .titles{
     color: black;
-    font-size: 30px;
+    font-size: 30pt;
     font-style: bold;
     font-family:Nunito Sans, sans-serif;
     margin-bottom: 10px;
 }
 .titles2{
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 30pt;
     font-style: bold;
     font-family:Nunito Sans, sans-serif;
@@ -128,21 +131,24 @@ input{
 }
 /* Pagina de registro */
 .register{
+    background-color: rgb(79, 167, 92);
     display:block;
     width: 320px;
-    height: 450px;
+    height: 75%;
 }
 /* Padrão dos botões dos paineis de controle */
 .centerTable button{
-    background-color: rgb(23, 61, 29);
+    background-color:#094033;
     color: aliceblue;
     border-radius: 15px;
     border: none;
     font-family:Nunito Sans, sans-serif;
-    padding: 7%;
+    padding: 9%;
 }
 .centerTable button:hover{
-    background-color: red;
+    background-color: #04201a;
+    transition: 1s;
+    border-color: #031813;
 }
 .center{
     position: absolute;
@@ -164,7 +170,6 @@ input{
 .padding{
     border-radius: 10px;
     padding: 3%;
-    border: 1px solid black;
 }
 .header{
     top: 0;
@@ -172,7 +177,6 @@ input{
     padding: 2% 0 2%;
     width: 100%;
     position: sticky;
-    z-index: 2;
     background-color: rgb(79, 167, 92);
 }
 .header .imgLogo{
@@ -201,7 +205,7 @@ input{
     color:white;
 }
 .header button{
-    background-color: rgb(10, 78, 30);
+    background-color: #094033;
     color: aliceblue;
     padding: 10px;
     border-radius: 15px;
@@ -209,7 +213,9 @@ input{
     border: none;
 }
 .header button:hover{
-    background-color: rgb(2, 24, 9);
+    background-color: #04201a;
+    transition: 1s;
+    border-color: #031813;
 }
 table td {
     max-width: 70px;
@@ -237,6 +243,7 @@ td{
     border: 1px solid black;
 }
 table{
+    font-family:Nunito Sans, sans-serif;
     border-collapse: collapse;
     border: 1px;
     border-color: black;
@@ -257,7 +264,7 @@ table{
     text-align: center;
     padding-right: 10%;
   }
-  .detalheAbaixoFooter{
+.detalheAbaixoFooter{
     grid-area: detalheAbaixoFooter;
     padding-left: 10%;
     padding-right: 10%;
@@ -283,18 +290,15 @@ table{
     border-color: rgb(79, 167, 92) ;
    }
 .login3{
-width: 25%;
- height: 100%;
- margin-left: 50%;
- padding-left: 25%;
- position: absolute;
-     background-color: #9dc49d;
-
-
+    width: 25%;
+    height: 100%;
+    margin-left: 50%;
+    padding-left: 25%;
+    position: absolute;
 }
 .imgLogin{
     width: 40%;
-    margin-bottom: 15pt;
+    margin-bottom: 2%;
 }
 .inputLogin{
     margin-top: 10pt;
@@ -313,35 +317,35 @@ width: 25%;
 
 /*  home */
 .headerHome{
-   top: 0;
+    top: 0;
     height: 60px;
     padding: 2% 0 2%;
     width: 100%;
     position: sticky;
     display: block;
-    z-index: 2;
     background-color: rgb(79, 167, 92);
 }
 .imgHome{
     width: 15%;
-    padding-left: 10pt;
 }
 .imgHome2{
-    width: 40%;
+    margin-left: 5%;
+    margin-top: 7%;
+    max-width: 20%;
     float: left;
 }
 .home{
-    background-color: #9dc49d;
-      text-align: center;
+    color: black;
+    text-align: center;
 }
 .textHome{
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 15px;
     font-family:Nunito Sans, sans-serif;
     margin-top: 20pt;
 }
 #buttonHome{
-    margin-top: 20%;
+    margin-top: 15%;
 }
 .titleHome{
     margin-bottom: 20pt;
@@ -363,21 +367,14 @@ width: 25%;
 }
 
 /*    register  */
-.register1{
-    background-color: rgb(79, 167, 92);
-    border-color: rgb(79, 167, 92);
-    margin-top: 10%;
-    margin-bottom: 5%;
-   }
-.register2{
-     background-color: #9dc49d;
-}
 .titleRegister{
+    display: block;
     color: white;
-    margin-top: 10pt;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 .buttonRegister{
-    padding-top: 20pt;
+    margin-top: 2%;
 }
 .titles3{
     color: white;
@@ -386,14 +383,6 @@ width: 25%;
     font-family:Nunito Sans, sans-serif;
     margin-bottom: 10px;
 }
-
-
-/*  users */
-.users1{
-    background-color: #9dc49d;;
-}
-
-
 
 /*   conteúdos    */
 .create1{

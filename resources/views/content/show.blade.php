@@ -11,7 +11,9 @@
     <div class="center">
         <p>{{$content->title}}</p>
         <p>{{$content->text}}</p>
-        <p>{{$content->user->name}}</p>
+        <b>Autor: {{$content->user->name}}</b>
     </div>
+    {{-- para voltar --}}
+    <a href="{{ URL::previous()}}">Voltar</a>
 </body>
 </html>

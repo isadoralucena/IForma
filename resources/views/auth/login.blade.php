@@ -9,31 +9,27 @@
 </head>
 <body>
             <div class ="login"> 
-                <div class=" center">
-                    <center >                  
+                <div class="center">               
                     <img  onclick="window.location='{{ url('/')}}'" class="imgLogo" src="{{ asset('images/logo.png') }}">
-                </center>
                 </div>
-            
             </div>
+                 
+    <div class="login3">
+        <div class="padding center texts2 login2">
 
-            
-<div class="login3">
-    <div class="padding center texts2 login2">
-
-        <img  onclick="window.location='{{ url('/')}}'" class="imgLogin" src="{{ asset('images/logo.png') }}">
-            
-        <h1 class="titles2 logLogin">Login</h1>
-        <form action="{{url('/login')}}" method="POST">
-            @csrf
-            <label for="email"><b>E-mail: </b></label>
-            <input required type="email" name="email" placeholder="nome@escolar.ifrn.edu.br" class="inputLogin">
-            <label for="password"><b>Senha: </b> </label>
-            <input required type="password" name="password" placeholder="Senha" class="inputLogin">
-            <button class="littleButton buttonLogin">Acessar</button>
-        </form>
+            <img  onclick="window.location='{{ url('/')}}'" class="imgLogin" src="{{ asset('images/logo.png') }}">
+                
+            <h1 class="titles2 logLogin">Login</h1>
+            <form action="{{url('/login')}}" method="POST">
+                @csrf
+                <label for="email"><b>E-mail: </b></label>
+                <input required type="email" name="email" placeholder="nome@escolar.ifrn.edu.br" class="inputLogin">
+                <label for="password"><b>Senha: </b> </label>
+                <input required type="password" name="password" placeholder="Senha" class="inputLogin">
+                <button class="littleButton buttonLogin">Acessar</button>
+            </form>
+        </div>
     </div>
-</div>
     
 </body>
     

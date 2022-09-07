@@ -1,13 +1,12 @@
 @extends('layouts.layout')
 @section('header')
 @section('body')
-<div class="users1">
     
 <p class="centerA">
     <button class="bigButton" type="submit"><a href="{{url('/register')}}">Cadastro de usuários</a></button>
         
     </p>
-    <div  class="centerTable">
+    <div class="centerTable">
         <table style="border: 1px solid black">
             <thead>
                 <tr>
@@ -59,5 +58,4 @@
     
 
 @endsection
-</div>
     

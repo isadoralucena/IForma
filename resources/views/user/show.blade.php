@@ -14,5 +14,7 @@
         <p>{{$user->email}}</p>
         <p>{{$user->userType}}</p>
     </div>
+    {{-- para voltar --}}
+    <a href="{{ URL::previous()}}">Voltar</a>
 </body>
 </html>

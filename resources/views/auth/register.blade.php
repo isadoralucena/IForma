@@ -8,14 +8,8 @@
     <link href="{{asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
     <script src="{{asset('js/validate.js')}}"></script>
 </head>
-<body class="register2">
-    <div class="headerHome">   
-            <img  onclick="window.location='{{ url('/register')}}'" class="imgHome center" src="{{ asset('images/logo.png') }}">
-    </div>
 
-<div class="register1">
-    <div class="padding center texts register1 ">
-        <div class="register">
+    <div class="register padding center texts ">
             <h1 class="titles3">Cadastre um usuário</h1>
             <form onsubmit="return validate();" action="{{url('/register')}}" method="POST">
             @csrf
@@ -42,12 +36,9 @@
                 </div>
                
             </form>
-        </div>
+            {{-- para voltar --}}
+            <a href="{{ URL::previous()}}">Voltar</a>
     </div>
-
-
-
-</div>
     
 </body>
 </html>
