@@ -3,7 +3,7 @@
 @section('body')
     
 <p class="centerA">
-    <button class="bigButton" type="submit"><a href="{{url('/register')}}">Cadastro de usuários</a></button>
+    <button class="buttonPainel" type="submit"><a href="{{url('/register')}}">Cadastro de usuários</a></button>
         
     </p>
     <div class="centerTable">
@@ -35,7 +35,8 @@
                     @endif
                     <td>{{$item->date}}</td>
                     <td>
-                        <a href="{{url('/users/' . $item->id. '/edit')}}">Editar</a>
+                        <button class=" littleButon"><a href="{{url('/users/' . $item->id. '/edit')}}">Editar</a>
+   </button>
                     </td>
                     <td>
                         <form action="{{url('/users/' . $item->id)}}" method="POST">

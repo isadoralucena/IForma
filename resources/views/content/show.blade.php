@@ -14,6 +14,8 @@
         <b>Autor: {{$content->user->name}}</b>
     </div>
     {{-- para voltar --}}
-    <a href="{{ URL::previous()}}">Voltar</a>
+
+    <button class="voltar"><a href="{{ URL::previous()}}">Voltar</a></button>
+    
 </body>
 </html>

@@ -37,7 +37,13 @@
                
             </form>
             {{-- para voltar --}}
-            <a href="{{ URL::previous()}}">Voltar</a>
+            
+            <button class="voltar">
+                <a href="{{ URL::previous()}}">Voltar</a>
+            </button>
+
+            
+            
     </div>
     
 </body>

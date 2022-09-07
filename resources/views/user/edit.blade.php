@@ -7,8 +7,8 @@
     <link href="{{asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
     <title>Create</title>
 </head>
-<body>
-    <div class="padding center texts">
+<body class="register padding center texts">
+    <div class="padding center texts2">
     <form action="{{url('/users', ['user'=>$user->id])}}" method="POST">
         @csrf
         @method('PUT')
@@ -27,5 +27,7 @@
         <button class="bigButton">Registrar</button>
     </form>
     </div>
+
+    <button class="voltar"><a href="{{ URL::previous()}}">Voltar</a></button>
 </body>
 </html>

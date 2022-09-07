@@ -2,7 +2,8 @@
 @section('header')
 @section('body')
     <p class="centerA">
-        <a href="{{url('/contents/create')}}">Cadastro de conteúdos</a>
+        <button class="bigButton">   <a href="{{url('/contents/create')}}">Cadastro de conteúdos</a>  </button>
+       
     </p>
     <div class="centerTable">
         <table style="border: 1px solid black">
@@ -25,7 +26,8 @@
                     <td>{{$item->text}}</td>
                     <td>{{$item->user->name}}</td>
                     <td>
-                        <a href="{{url('/contents/' . $item->id. '/edit')}}">Editar</a>
+                        <button><a href="{{url('/contents/' . $item->id. '/edit')}}">Editar</a></button>
+                        
                     </td>
                     <td>
                         <form action="{{url('/contents/' . $item->id)}}" method="POST">

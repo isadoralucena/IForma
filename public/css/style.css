@@ -136,17 +136,26 @@ input{
     width: 320px;
     height: 75%;
 }
+.register a{
+    text-decoration:    none;
+    color:  white   ;
+}
 /* Padrão dos botões dos paineis de controle */
+.centerTable a {
+    text-decoration: none;
+    color: white;
+}
 .centerTable button{
+    text-decoration:none;
     background-color:#094033;
-    color: aliceblue;
+    color: white;
     border-radius: 15px;
     border: none;
     font-family:Nunito Sans, sans-serif;
     padding: 9%;
-}
+    }
 .centerTable button:hover{
-    background-color: #04201a;
+    background-color: red;
     transition: 1s;
     border-color: #031813;
 }
@@ -156,9 +165,21 @@ input{
     top: 50%;
     transform: translate(-50%, -50%);
 }
+.center a{
+    text-decoration: none;
+    color: white;
+}
+.center a:hover
+{
+
+}
 .centerA{
     margin-top: 2%;
     text-align: center;
+}
+.centerA a {
+    text-decoration: none;
+    color:  white;
 }
 .centerTable{
     margin-top: 2%;
@@ -390,4 +411,51 @@ table{
     border-color: rgb(79, 167, 92);
     color: white;
     font-size: 12pt;
+}
+
+
+
+/*   botao painel */
+
+.buttonPainel{
+    background-color: #094033;
+    color: aliceblue;
+    border-radius: 15px;
+    border: solid #094033 1px;
+    height: 30px;
+    width: 200px;
+    font-family:Nunito Sans, sans-serif;
+    margin-left: 50px;
+    text-decoration: none;
+}
+.buttonPainel:hover{
+    background-color:#04201a;
+    transition: 1s;
+    border-color: #031813;
+}
+    
+
+
+    /*voltar*/
+    .voltar{
+background-color: #094033;
+    color: aliceblue;
+    border-radius: 15px;
+    border: solid #094033 1px;
+    height: 25px;
+    width: 70px;
+    font-family:Nunito Sans, sans-serif;
+    font-weight:bold;
+    }
+    .voltar:hover{
+    background-color: red;
+    transition: 1s;
+    border-color: red;
+    }
+    .divVoltar{
+        border-top: 25pt;
+    }
+    .edits {
+    height: 30px;
+    width: 200px;    
 }
