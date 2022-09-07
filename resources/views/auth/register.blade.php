@@ -31,20 +31,11 @@
                 
                 <label class="titleRegister" for="userType">Insira o tipo de usuário: </label>
                 <input required type="text" name="userType" placeholder="Insira o tipo de usuario">
-                <div class="buttonRegister">
-                    <button type="submit" class="bigButton">Registrar</button> 
-                </div>
+                    <button type="submit" class=" buttonRegister bigButton">Registrar</button> 
                
-            </form>
-            {{-- para voltar --}}
-            
-            <button class="voltar">
-                <a href="{{ URL::previous()}}">Voltar</a>
-            </button>
-
-            
-            
+            </form>     
     </div>
-    
+    {{-- para voltar --}}   
+    <button class="voltar"><a href="{{ URL::previous()}}">Voltar</a></button>
 </body>
 </html>

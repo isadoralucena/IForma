@@ -8,20 +8,15 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
 </head>
 <body>
-    <div class="center">
-        <p>{{$user->name}}</p>
-        <p>{{$user->date}}</p>
-        <p>{{$user->email}}</p>
-        <p>{{$user->userType}}</p>
+    <div class="center ">
+        <p class="textShow">{{$user->name}}</p>
+        <p class="textShow">{{$user->date}}</p>
+        <p class="textShow">{{$user->email}}</p>
+        <p class="textShow">{{$user->userType}}</p>
     </div>
-
     
     {{-- para voltar --}}
-    <div class="show">
-        <button class="voltar"><a href="{{ URL::previous()}}">Voltar</a></button>
-    </div>
+    <button class="voltar"><a href="{{ URL::previous()}}">Voltar</a></button>
 
-    
-    
 </body>
 </html>

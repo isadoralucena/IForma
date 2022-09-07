@@ -17,8 +17,9 @@
             <input required type="title" name="title" id="title">
             <label for="text"  class="titleRegister"><b>Texto</b></label>
             <textarea required type="text" name="text" id="text"></textarea>
-            <button class="littleButton" type="submit">Criar</button>
+            <button class="bigButton" type="submit">Criar</button>
         </form>
     </div>
+    <button class="voltar"><a href="{{ URL::previous()}}">Voltar</a></button>
 </body>
 </html>

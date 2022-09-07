@@ -8,7 +8,7 @@
     <title>Edit</title>
 </head>
 <body>
-    <div class="padding center texts2 register">
+    <div class="center padding texts create1">
 
         <form action="{{url('/contents', ['content'=>$content->id])}}" method="POST">
             @csrf
@@ -19,8 +19,7 @@
             <textarea required type="text" name="text" id="text" value="{{$content->text}}"></textarea>
             <button class="bigButton" type="submit">Editar</button>
         </form>
-
-          <button class="voltar"><a href="{{ URL::previous()}}">Voltar</a></button>
     </div>
+    <button class="voltar"><a href="{{ URL::previous()}}">Voltar</a></button>
 </body>
 </html>

@@ -8,13 +8,12 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
 </head>
 <body>
-    <div class="center">
-        <p>{{$content->title}}</p>
-        <p>{{$content->text}}</p>
-        <b>Autor: {{$content->user->name}}</b>
+    <div class="showDiv">
+        <p class="titleShow">{{$content->title}}</p>
+        <p class="textShow">{{$content->text}}</p>
+        <p class="authorShow">Autor: {{$content->user->name}}</p>
     </div>
     {{-- para voltar --}}
-
     <button class="voltar"><a href="{{ URL::previous()}}">Voltar</a></button>
     
 </body>

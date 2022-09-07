@@ -1,7 +1,6 @@
 @extends('layouts.layout')
 @section('header')
 @section('body')
-<h1 class="centerTable">Conteúdos</h1>
 
 @foreach ($contents as $item)
     <div onclick="window.location='{{url('/contents/' . $item->id)}}'" class="content">

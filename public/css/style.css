@@ -16,8 +16,8 @@ body{
     width: 75%; 
     margin-left: auto;
     margin-right: auto; 
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     background-color: white;
     border: 1px solid rgb(196, 195, 195);
 }
@@ -135,6 +135,9 @@ input{
     display:block;
     width: 320px;
     height: 75%;
+}
+.edit .register{
+    height: 50%;
 }
 .register a{
     text-decoration:    none;
@@ -434,28 +437,50 @@ table{
     border-color: #031813;
 }
     
-
-
-    /*voltar*/
-    .voltar{
-background-color: #094033;
-    color: aliceblue;
+/*voltar*/
+.voltar{
+    background-color: #094033;
     border-radius: 15px;
     border: solid #094033 1px;
     height: 25px;
     width: 70px;
-    font-family:Nunito Sans, sans-serif;
-    font-weight:bold;
-    }
-    .voltar:hover{
+}
+.voltar:hover{
     background-color: red;
     transition: 1s;
     border-color: red;
-    }
-    .divVoltar{
-        border-top: 25pt;
-    }
-    .edits {
+}
+.voltar a{
+    font-family:Nunito Sans, sans-serif;
+    color: aliceblue;
+    font-weight:bold;
+    text-decoration: none;
+}
+.edits {
     height: 30px;
     width: 200px;    
+}
+.showDiv{
+    font-family:Nunito Sans, sans-serif;
+    margin-top: 7%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.titleShow{
+    font-size: 25pt;
+    font-weight: bold;
+    text-align: center;
+}
+.textShow{
+    font-size: 12pt;
+    text-align: justify;
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+.authorShow{
+    font-size: 12pt;
+    display: block;
+    margin-top: 15%;
+    margin-bottom: 5%;
 }
