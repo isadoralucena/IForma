@@ -26,10 +26,10 @@ composer global require laravel/installer
 composer update
 ```
 ## Configurar banco de dados
-No arquivo .env colocar informações do servidor
+Renomear o arquivo .env.example para .env e colocar informações do servidor
 
 ```
-DB_CONNECTION=mysql>
+DB_CONNECTION=mysql
 DB_HOST= 
 DB_PORT=
 DB_DATABASE= 
