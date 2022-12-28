@@ -2,7 +2,7 @@
 @section('header')
 @section('body')
     <p class="centerA">
-        <a href="{{url('/contents/create')}}">Cadastro de conteudo</a>
+        <button class="buttonPainel" href="{{url('/contents/create')}}">Cadastro de conteudo</button>
     </p>
     <div class="centerTable">
         <table style="border: 1px solid black">
@@ -27,7 +27,12 @@
                         <td>{{$item->text}}</td>
                         <td>{{$item->user->name}}</td>
                         <td>
-                            <a href="{{url('/contents/' . $item->id. '/edit')}}">Editar</a>
+                            
+                            <form action="{{url('/contents/' . $item->id. '/edit')}}" method="GET">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit">Editar</button>
+                            </form>
                         </td>
                         <td>
                             <form action="{{url('/contents/' . $item->id)}}" method="POST">

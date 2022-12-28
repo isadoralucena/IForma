@@ -16,7 +16,7 @@
             <label for="title">Título</label>
             <input required type="title" name="title" id="title" value="{{$content->title}}">
             <label for="text">Texto</label>
-            <textarea required type="text" name="text" id="text" value="{{$content->text}}"></textarea>
+            <textarea required type="text" name="text" id="text" placeholder="{{$content->text}}"></textarea>
             <button class="bigButton" type="submit">Editar</button>
         </form>
     </div>

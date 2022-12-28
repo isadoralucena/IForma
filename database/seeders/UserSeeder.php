@@ -18,6 +18,13 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Administrator',
+            'email' => 'glaucyrlei.p@escolar.ifrn.edu.br',
+            'password' => Hash::make(123123123),
+            'userType' => 3,
+            'date' => '2022-01-01'
+        ]);
+        User::create([
+            'name' => 'Administrator',
             'email' => 'admin@gmail.com',
             'password' => Hash::make(123123123),
             'userType' => 3,

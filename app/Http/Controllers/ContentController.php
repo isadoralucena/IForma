@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Content;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\CreateContent;
+use App\Notifications\DeleteContent;
+use App\Notifications\UpdateContent;
 
 class ContentController extends Controller
 {
@@ -59,6 +62,9 @@ class ContentController extends Controller
         $content->title = $request->title;
         $content->text = $request->text;
         $content->save();
+
+        Auth::user()->notify (new CreateContent($content, Auth::user()));
+
         return redirect(url('/contents'));
     }
 
@@ -104,6 +110,9 @@ class ContentController extends Controller
         $content->title = $request->input('title');
         $content->text = $request->input('text');
         $content->save();
+
+        Auth::user()->notify (new UpdateContent($content, Auth::user()));
+
         return redirect(url('/contents'));
     }
 
@@ -116,6 +125,8 @@ class ContentController extends Controller
     public function destroy($id)
     {
         $content = Content::find($id);
+        Auth::user()->notify (new DeleteContent($content, Auth::user()));
+        
         $content->delete();
         return redirect(url('/contents'));
     }
