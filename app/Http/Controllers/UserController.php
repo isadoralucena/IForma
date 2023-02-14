@@ -33,7 +33,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = new User;
-        //$user->id = Auth::id();
+
         $user->name = $request->name;
         $user->userType = $request->userType;
         $user->email = $request->email;
@@ -102,4 +102,25 @@ class UserController extends Controller
         $user->delete();
         return redirect(url('/users'));
     }
+    public function editPhoto($id)
+    {
+        $user = User::find ($id);
+        return view ('user.editPhoto', [
+            'user' => $user,
+        ]);
+    }
+    public function updatePhoto(Request $request, $id)
+    {
+        $user = User::find($id);
+
+        $extension = $request->file('photo')->getClientOriginalExtension();
+        $filename = 'user'.$user->id.'.'.$extension;
+        $file = $request->file('photo')->storeAs('users', $filename);
+        $user->photo = $file;
+
+        $user->save();
+        
+        return redirect(url('/users'));
+    }
+
 }

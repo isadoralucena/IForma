@@ -30,6 +30,10 @@ Route::middleware(['auth'])->group(function (){
 
     Route::get('/contents/teachercontrolpane', [ContentController::class, 'teachercontrolpane']);
     Route::get('/contents/admincontrolpanecont', [ContentController::class, 'admincontrolpanecont']);
+
+    Route::get('/contents/editPhoto/{id}', [UserController::class, 'editPhoto']);
+    Route::put('/contents/editPhoto/{id}', [UserController::class, 'updatePhoto']);
+
     Route::resource('/contents', ContentController::class);
 });
 

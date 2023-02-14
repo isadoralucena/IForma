@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('date');
             $table->string('password');
             $table->integer("userType");
+            $table->string('photo')->default('');
             // 1 aluno
             // 2 professor
             // 3 admin

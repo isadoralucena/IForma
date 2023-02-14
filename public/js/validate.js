@@ -19,13 +19,13 @@ function validate() {
                 auxi += conteudo[n];
                 conteudoCSimbolo = simbolos.exec(conteudo);
             }
-            
+
             if (auxi.length>=2) {
                 var letrasMaiusculas = /[A-Z]/;
                 var letrasMinusculas = /[a-z]/;
                 var conteudoCMaiusculas = letrasMaiusculas.exec(conteudo);
                 var contedoCMinusculas = letrasMinusculas.exec(conteudo);
-                
+
                 if (conteudoCMaiusculas && contedoCMinusculas) {
                     var num = /[0-9]/g;
                     var conteudoCNumeros = num.exec(conteudo);
@@ -58,5 +58,5 @@ function validate() {
             return false;
         }
     }
-    
+
 }

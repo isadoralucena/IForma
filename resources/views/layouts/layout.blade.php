@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" > 
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"></link>
 </head>
 <body>
@@ -20,7 +20,7 @@
                             <button type="submit">Painel de controle</button>
                         </form>
                     </li>
-                @endif   
+                @endif
                 @if(Auth::user()->userType === 3)
                     <li>
                         <form action="{{url('/contents/admincontrolpanecont')}}" method="GET">
@@ -34,15 +34,25 @@
                     </li>
                 @endif
                 <li >
-                    <div onclick="window.location='{{ url('/contents')}}'">
-                        <img class="imgPerson" src="{{ asset('images/person.png') }}">
+                    @php
+                        $foto = Auth::user()->photo;
+                        $full_path = Storage::path($foto);
+                        $base64 = base64_encode(Storage::get($foto));
+                        $image = 'data:' . mime_content_type($full_path) . ';base64,' . $base64;
+                    @endphp
+                    <div onclick="window.location='{{ url('/contents/editPhoto', ['id' => Auth::user()->id])}}'">
+                        @if($foto)
+                            <img class="rounded-circle border border-2" width="32px" src="{{$image}}">
+                        @else
+                            <img src="{{asset('images/person.png') }}" class="rounded-circle border border-2" width="32px">
+                        @endif
                         <p>{{Auth::user()->name}}</p>
                     </div>
                 </li>
                 <li>
                     <form action="{{url('/logout')}}" method="POST">
                         @csrf
-                        <button type="submit">Sair</button>                                    
+                        <button type="submit">Sair</button>
                     </form>
                 </li>
             </ul>

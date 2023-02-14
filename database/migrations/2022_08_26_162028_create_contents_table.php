@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title', 100);
             $table->text('text');
             //creating foreign key
+            $table->string('photo')->default('');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
                 ->references('id')

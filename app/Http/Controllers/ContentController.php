@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Notifications\CreateContent;
 use App\Notifications\DeleteContent;
 use App\Notifications\UpdateContent;
+use Illuminate\Support\Facades\Storage;
 
 class ContentController extends Controller
 {
@@ -23,7 +24,7 @@ class ContentController extends Controller
             'contents' => $contents,
         ]);
     }
-    
+
     public function teachercontrolpane()
     {
         $contents = Content::all();
@@ -61,9 +62,15 @@ class ContentController extends Controller
         $content->user_id = Auth::id();
         $content->title = $request->title;
         $content->text = $request->text;
+
+        $extension = $request->file('photo')->getClientOriginalExtension();
+        $filename = 'content'.$content->id.'.'.$extension;
+        $file = $request->file('photo')->storeAs('contents', $filename);
+        $content->photo = $file;
+
         $content->save();
 
-        Auth::user()->notify (new CreateContent($content, Auth::user()));
+        //Auth::user()->notify (new CreateContent($content, Auth::user()));
 
         return redirect(url('/contents'));
     }
@@ -77,8 +84,15 @@ class ContentController extends Controller
     public function show($id)
     {
         $content = Content::find ($id);
+
+        $path = $content->photo;
+        $full_path = Storage::path($path);
+        $base64 = base64_encode(Storage::get($path));
+        $image_data = 'data:'.mime_content_type($full_path) . ';base64,' . $base64;
+
         return view('content.show', [
             'content' => $content,
+            'photo' => $image_data,
         ]);
     }
 
@@ -104,7 +118,7 @@ class ContentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)//FALTA TERMINAR AQUI
-    { 
+    {
         $content = Content::find($id);
         $content->user_id = Auth::id();
         $content->title = $request->input('title');
@@ -126,7 +140,7 @@ class ContentController extends Controller
     {
         $content = Content::find($id);
         Auth::user()->notify (new DeleteContent($content, Auth::user()));
-        
+
         $content->delete();
         return redirect(url('/contents'));
     }
