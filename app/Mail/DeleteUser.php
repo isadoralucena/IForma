@@ -30,6 +30,6 @@ class DeleteUser extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mail.deleteUser', ['user' => $this->user]);
+        // return $this->markdown('mail.deleteUser', ['user' => $this->user]);
     }
 }

@@ -98,7 +98,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
-        Mail::to(Auth::user())->send(new DeleteUser($user));
+        // Mail::to(Auth::user())->send(new DeleteUser($user));
         $user->delete();
         return redirect(url('/users'));
     }
