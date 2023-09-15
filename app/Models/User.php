@@ -25,6 +25,18 @@ class User extends Authenticatable
         'date'
     ];
 
+    
+    /**
+
+     * The model's default values for attributes.
+     *
+     * @var array
+     */
+     protected $attributes = [
+        'date' => '2023-09-15 12:11:10',
+        'userType' => '1'
+    ];
+
     /**
      * The attributes that should be hidden for serialization.
      *
