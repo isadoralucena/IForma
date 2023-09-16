@@ -15,10 +15,10 @@ class UserTest extends TestCase
      */
     public function test_email()
     {
-        $endereco = 'isadora@gmail.com';
-        if(!filter_var($endereco, FILTER_VALIDATE_EMAIL)){
+        $user = User::factory()->make();
+        if(!filter_var($user->email, FILTER_VALIDATE_EMAIL)){
             throw new Exception(
-                "Email inválido: " . $endereco
+                "Email inválido: " . $user->email
             );
         }
         $this->assertTrue(true);

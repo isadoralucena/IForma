@@ -16,4 +16,12 @@ class Content extends Model
     public function user(){
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+    public static function validateText($text){
+        if (preg_match('/^[a-zA-Z0-9,.!? \-\p{L}\p{M}]+$/u', $text)) {
+            return true; 
+        }
+    
+        return false;
+    }
 }

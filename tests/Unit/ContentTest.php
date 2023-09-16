@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
+use App\Models\Content;
 
 class ContentTest extends TestCase
 {
@@ -11,8 +12,17 @@ class ContentTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_valid_content()
     {
-        $this->assertTrue(true);
+        $textoValido = "Este é um texto válido.";
+        $this->assertTrue(Content::validateText($textoValido));
     }
+
+    public function test_invalid_content()
+    {
+        $textoInvalido = "😊😉😉";
+        $this->assertFalse(Content::validateText($textoInvalido));
+    }
+
+    
 }
