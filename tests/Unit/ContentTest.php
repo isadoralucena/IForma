@@ -4,7 +4,6 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use App\Models\Content;
-use App\Models\User;
 
 class ContentTest extends TestCase
 {
@@ -24,6 +23,5 @@ class ContentTest extends TestCase
         $textoInvalido = "😊😉😉";
         $this->assertFalse(Content::validateText($textoInvalido));
     }
-
     
 }
