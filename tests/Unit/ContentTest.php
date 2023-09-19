@@ -7,21 +7,36 @@ use App\Models\Content;
 
 class ContentTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
-    public function test_valid_content()
-    {
-        $textoValido = "Este é um texto válido. 123";
-        $this->assertTrue(Content::validateText($textoValido));
+
+    public function validContentProvider(){
+        return [
+            ["texto 123"]
+        ];
     }
 
-    public function test_invalid_content()
+    /**
+    * @dataProvider validContentProvider
+    */
+    public function test_valid_content($valid_content)
     {
-        $textoInvalido = "😊😉😉";
-        $this->assertFalse(Content::validateText($textoInvalido));
+        $this->assertTrue(Content::validateText($valid_content));
+    }
+
+    public function invalidContentProvider(){
+        return [
+            ["😊😉😉"],
+            [null],
+            ["olá 😊😉😉"],
+            [" "]
+        ];
+    }
+
+    /**
+    * @dataProvider invalidContentProvider
+    */
+    public function test_invalid_content($invalid_content)
+    {
+        $this->assertFalse(Content::validateText($invalid_content));
     }
     
 }
