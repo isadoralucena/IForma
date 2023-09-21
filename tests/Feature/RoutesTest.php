@@ -18,7 +18,6 @@ class RoutesTest extends TestCase
             ["/contents/edit"],
             ["/contents/teachercontrolpane"],
             ["/contents/admincontrolpanecont"],
-            
         ];
     }
     public function test_base_route()

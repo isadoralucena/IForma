@@ -29,7 +29,7 @@ class CreateContentTest extends TestCase
             'text' => 'Texto do content',
             'user_id' => 1
         ];
-        $imagePath = 'D:\cat.jpeg';
+        $imagePath = 'D:\raleu.png';
         $contentData['photo'] = UploadedFile::fake()->create($imagePath);
         return $contentData;
     }
@@ -55,6 +55,6 @@ class CreateContentTest extends TestCase
         $this->actingAs($user);
     
         $response = $this->post('/contents', $this->fakeContent());
-        $response->assertStatus(302);
+        $response->assertStatus(403);
     }
 }

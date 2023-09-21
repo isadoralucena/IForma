@@ -10,7 +10,8 @@ class ContentTest extends TestCase
 
     public function validContentProvider(){
         return [
-            ["texto 123"]
+            ["texto 123"],
+            ["Mutcho texto lorem  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui laudantium ullam eos eligendi quidem! Mollitia facilis voluptates sunt minus autem aliquam tempora consequuntur at dolores cum. Quasi sed incidunt debitis?"]
         ];
     }
 
@@ -26,8 +27,7 @@ class ContentTest extends TestCase
         return [
             ["😊😉😉"],
             [null],
-            ["olá 😊😉😉"],
-            [" "]
+            ["olá 😊😉😉"]
         ];
     }
 

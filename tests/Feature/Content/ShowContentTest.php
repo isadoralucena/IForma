@@ -36,32 +36,30 @@ class ShowContentTest extends TestCase
     }
 
     public function test_show_content_acting_as_admin(){
-        $user = $this->fakeUserCreate(1, 3, "admin@gmail.com");
+        $user = $this->fakeUserCreate(7, 3, "admin2@gmail.com");
         $this->actingAs($user);
     
-        $response = $this->post('/contents', $this->fakeContent(5));
+        $response = $this->post('/contents', $this->fakeContent(13));
 
-        $response = $this->show('/contents', 5);
-        $response->assertStatus(302);
+        $response = $this->get('/contents/13');
+        $response->assertStatus(200);
     }
 
     public function test_show_content_acting_as_teacher(){
-        $user = $this->fakeUserCreate(2, 2, "hugo@gmail.com");
+        $user = $this->fakeUserCreate(8, 2, "hugo2@gmail.com");
         $this->actingAs($user);
     
-        $response = $this->post('/contents', $this->fakeContent(4));
+        $response = $this->post('/contents', $this->fakeContent(14));
 
-        $response = $this->show('/contents', 4);
-        $response->assertStatus(302);
+        $response = $this->get('/contents/14');
+        $response->assertStatus(200);
     }
     
     public function test_show_content_acting_as_student(){
-        $user = $this->fakeUserCreate(3, 1, "glau@gmail.com");
+        $user = $this->fakeUserCreate(9, 1, "mai@gmail.com");
         $this->actingAs($user);
 
-        $response = $this->post('/contents', $this->fakeContent(3));
-
-        $response = $this->show('/contents', 3);
-        $response->assertStatus(302);
+        $response = $this->get('/contents/14');
+        $response->assertStatus(200);
     }
 }

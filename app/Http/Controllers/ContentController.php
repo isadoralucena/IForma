@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Content;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Notifications\CreateContent;
 use App\Notifications\DeleteContent;
@@ -58,7 +59,14 @@ class ContentController extends Controller
      */
     public function store(Request $request)
     {
+        $user = User::find(Auth::id());
+        if($user->userType == 1){
+            return abort(403, 'Ação não permitida');
+        }
         $content = new Content;
+        if($request->id){
+            $content->id = $request->id;
+        }
         $content->user_id = Auth::id();
         $content->title = $request->title;
         $content->text = $request->text;
@@ -119,13 +127,17 @@ class ContentController extends Controller
      */
     public function update(Request $request, $id)//FALTA TERMINAR AQUI
     {
+        $user = User::find(Auth::id());
+        if($user->userType == 1){
+            return abort(403, 'Ação não permitida');
+        }
         $content = Content::find($id);
         $content->user_id = Auth::id();
         $content->title = $request->input('title');
         $content->text = $request->input('text');
         $content->save();
 
-        Auth::user()->notify (new UpdateContent($content, Auth::user()));
+        // Auth::user()->notify (new UpdateContent($content, Auth::user()));
 
         return redirect(url('/contents'));
     }
@@ -138,9 +150,15 @@ class ContentController extends Controller
      */
     public function destroy($id)
     {
+        $user = User::find(Auth::id());
+        if($user->userType == 1){
+            return abort(403, 'Ação não permitida');
+        }
         $content = Content::find($id);
-        Auth::user()->notify (new DeleteContent($content, Auth::user()));
-
+        // Auth::user()->notify (new DeleteContent($content, Auth::user()));
+        if (!$content) {
+            return abort(404);
+        }
         $content->delete();
         return redirect(url('/contents'));
     }

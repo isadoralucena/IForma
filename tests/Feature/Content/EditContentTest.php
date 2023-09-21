@@ -10,7 +10,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Testing\File;
 use Illuminate\Http\UploadedFile;
 
-class DeleteContentTest extends TestCase
+class EditContentTest extends TestCase
 {
     protected function fakeUserCreate($id, $type, $email){
         $user = User::factory()->create([
@@ -35,30 +35,40 @@ class DeleteContentTest extends TestCase
         return $contentData;
     }
 
-    public function test_delete_content_acting_as_admin(){
-        $user = $this->fakeUserCreate(4, 3, "admin1@gmail.com");
+    public function test_edit_content_acting_as_admin(){
+        $user = $this->fakeUserCreate(10, 3, "admin3@gmail.com");
         $this->actingAs($user);
     
-        $response = $this->post('/contents', $this->fakeContent(12, 4));
-        $response = $this->delete('/contents/12');
+        $response = $this->post('/contents', $this->fakeContent(12, 15));
+        $novoConteudo= [
+            'title' => "titulo novo",
+            'text' => "texto novo"
+        ];
+        $response = $this->put('/contents/12', $novoConteudo);
         $response->assertStatus(302);
     }
 
     public function test_delete_content_acting_as_teacher(){
-        $user = $this->fakeUserCreate(5, 2, "hugo1@gmail.com");
+        $user = $this->fakeUserCreate(11, 2, "hugo3@gmail.com");
         $this->actingAs($user);
     
-        $response = $this->post('/contents', $this->fakeContent(4, 5));
-        $response = $this->delete('/contents/4');
+        $response = $this->post('/contents', $this->fakeContent(4, 16));
+        $novoConteudo= [
+            'title' => "titulo novo",
+            'text' => "texto novo"
+        ];
+        $response = $this->put('/contents/4', $novoConteudo);
         $response->assertStatus(302);
     }
     
     public function test_delete_content_acting_as_student(){
-        $user = $this->fakeUserCreate(6, 1, "isa@gmail.com");
+        $user = $this->fakeUserCreate(12, 1, "bia@gmail.com");
         $this->actingAs($user);
-
-        $response = $this->post('/contents', $this->fakeContent(3, 6));
-        $response = $this->delete('/contents/3');
+        $novoConteudo= [
+            'title' => "titulo novo",
+            'text' => "texto novo"
+        ];
+        $response = $this->put('/contents/4', $novoConteudo);
         $response->assertStatus(403);
     }
 }
